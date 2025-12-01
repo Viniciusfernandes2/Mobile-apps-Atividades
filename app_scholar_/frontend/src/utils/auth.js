@@ -1,0 +1,10 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+export async function isLoggedIn() {
+  const token = await AsyncStorage.getItem("token");
+  return !!token;
+}
+
+export async function logout() {
+  await AsyncStorage.clear();
+}
